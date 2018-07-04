@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewsport" content="width=device-width, initial-scale=1">
-		
-		<title>Election 2016</title>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/custom.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-		
-	</head>
+<?php 
+  $this->load->view('header');
+?>
 	<body>
 		<div class="container">
 			<div class="row">

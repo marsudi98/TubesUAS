@@ -1,37 +1,18 @@
 <?php 
   $this->load->view('header');
 ?>
-
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="#">Top navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/Election_Controller/index') ?>">Home </a>
-          </li>
-          <li>
-            <a class="nav-link" href="<?php echo base_url('index.php/Election_Controller/voting_page') ?>">Vote <span class="sr-only">(current)</span></a></li>
-        </ul>
-        
-      </div>
-</nav>
-<html>
 	<body ondragstart="return false" oncontextmenu="return false" onselectstart="return false">
 		<div class="container">
-			<div class="row text-center">
+			<div class="row col-md-6 text-center">
 				<h2>Most Valuable Player World Cup 2018</h2>
-				<img class="text-center" width="442" height="270" src="<?php echo base_url();?>assets/img/diligent_owl.png" id="vote_logo">
+				<img src="<?php echo base_url();?>assets/img/diligent_owl.png" id="vote_logo">
 			</div>
-
-			<div id="ballot_form">
+			<div  id="ballot_form" class="row col-md-6">
 				<form method="post" role="form" action="<?php echo site_url('election_controller/cast_vote'); ?>">
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th  colspan="4" class="text-center">Most Expensive Player</th>
+								<th colspan="4" class="text-center">Most Favorite Player</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -63,7 +44,69 @@
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th  colspan="4" class="text-center">Vice-President / Vote for 1</th>
+								<th  colspan="4" class="text-center">MOST FAVORITE GOAL KEEPER</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="1">CAYETANO, ALAN PETER</label>
+								</td>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="3">HONASAN, GRINGO</label>
+								</td>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="5">ROBREDO, LENI</label>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="2">ESCUDERO, CHIZ</label>
+								</td>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="4">MARCOS, BONGBONG</label>
+								</td>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="6">TRILLANES, ANTONIO IV</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th  colspan="4" class="text-center">MOST FAVORITE PLAYER</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="1">CAYETANO, ALAN PETER</label>
+								</td>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="3">HONASAN, GRINGO</label>
+								</td>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="5">ROBREDO, LENI</label>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="2">ESCUDERO, CHIZ</label>
+								</td>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="4">MARCOS, BONGBONG</label>
+								</td>
+								<td>
+									<label class="radio-inline"><input type="radio" name="vice-president" value="6">TRILLANES, ANTONIO IV</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th  colspan="4" class="text-center">MOST FAVORITE COACH</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -101,13 +144,11 @@
 								<li><a href="#">Home</a></li>
 							    <li><a href="#">Vote Page</a></li>
 							</ul>
-							<button type="submit" class="btn btn-primary">Submit Vote</button>
-						</div>
+						<button type="submit" class="btn btn-primary">Submit Vote</button>
 					</div>
 				</form>
 			</div>
 		</div>
-
 		<div class="modal fade" id="incorrect_password_modal" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -118,7 +159,6 @@
 				</div>
 			</div>
 		</div>
-
 	</body>
 </html>
 
