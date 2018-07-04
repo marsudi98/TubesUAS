@@ -20,7 +20,7 @@
                 <a class="nav-link" href="<?php echo base_url('index.php/Election_Controller/index') ?>">Home </a>
                 </li>
                 <li class="nav-item active">
-                <a class="nav-link" href="<?php echo base_url('index.php/Election_Controller/index') ?>">Data </a>
+                <a class="nav-link" href="<?php echo base_url('index.php/Pemain/index') ?>">Data </a>
                 </li>
                 <li>
                     <a class="nav-link" href="<?php echo base_url('index.php/Election_Controller/voting_page') ?>"> Vote <span class="sr-only">(current)</span></a>
