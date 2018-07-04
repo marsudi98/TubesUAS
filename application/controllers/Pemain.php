@@ -7,15 +7,15 @@ class Pemain extends CI_Controller {
 	{
 		$this->load->helper('url','form');
 		$this->load->model('Pemain_model');
-		$data['pemain_list'] = $this->pemain_model->getDatapemain();
-		$this->load->view('pemain', $data);
+		$data['pemain_list'] = $this->Pemain_model->getDatapemain();
+		$this->load->view('pemain_admin', $data);
 	}
 
 	public function create()
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
-		$this->load->model('pemain_model');
+		$this->load->model('Pemain_model');
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 		$this->form_validation->set_rules('nickname', 'Nickname', 'trim|required');
 		$this->form_validation->set_rules('rank', 'Rank', 'trim|required');
@@ -42,7 +42,7 @@ class Pemain extends CI_Controller {
 			}
 			else
 			{
-				$this->pemain_model->insertpemain();
+				$this->Pemain_model->insertpemain();
 				$this->load->view('tambah_pemain_data');
 			}
 		}
@@ -53,8 +53,8 @@ class Pemain extends CI_Controller {
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
-		$this->load->model('pemain_model');
-		$data['pemain'] = $this->pemain_model->getpemain($id);
+		$this->load->model('Pemain_model');
+		$data['pemain'] = $this->Pemain_model->getpemain($id);
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 		$this->form_validation->set_rules('nickname', 'Nickname', 'trim|required');
 		$this->form_validation->set_rules('rank', 'Rank', 'trim|required');
@@ -91,7 +91,7 @@ class Pemain extends CI_Controller {
 	public function deleteData($id)
 	{
 		$this->load->helper("url");
-		$this->load->model("pemain_model");
+		$this->load->model("Pemain_model");
 		$this->pemain_model->delete($id);
 		redirect('pemain');
 	}
