@@ -216,6 +216,7 @@ svg:not(:root) {
 
 table {
   border-collapse: collapse;
+  margin: 0 auto !important;
 }
 
 caption {
@@ -1517,6 +1518,7 @@ pre code {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
+  margin: 0 auto !important;
   background-color: transparent;
 }
 

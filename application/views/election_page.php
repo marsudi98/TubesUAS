@@ -1,13 +1,14 @@
 <?php 
   $this->load->view('header');
 ?>
-	<body ondragstart="return false" oncontextmenu="return false" onselectstart="return false">
+	<!-- ondragstart="return false" oncontextmenu="return false" onselectstart="return false" -->
+	<body>
 		<div class="container">
-			<div class="row col-md-6 text-center">
-				<h2>Most Valuable Player World Cup 2018</h2>
+			<!-- <div class="row">
+				<h2 class="text-center">Most Valuable Player World Cup 2018</h2>
 				<img src="<?php echo base_url();?>assets/img/diligent_owl.png" id="vote_logo">
-			</div>
-			<div  id="ballot_form" class="row col-md-6">
+			</div> -->
+			<div  id="ballot_form" class="row">
 				<form method="post" role="form" action="<?php echo site_url('election_controller/cast_vote'); ?>">
 					<table class="table table-bordered">
 						<thead>
@@ -149,6 +150,7 @@
 				</form>
 			</div>
 		</div>
+
 		<div class="modal fade" id="incorrect_password_modal" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">

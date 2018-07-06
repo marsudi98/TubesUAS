@@ -4,15 +4,15 @@
      
     <main role="main" class="container" style="background-image: url('maloch.jpg');">
       <ul class="nav navbar-right">
-      <a href="<?php echo base_url('index.php/pemain/create') ?>" class="btn btn-danger my-3"><b>TAMBAH</b></a>
+      <a href="<?php echo base_url('index.php/pemain/create') ?>" class="btn btn-primary my-3"><b>Tambah</b></a>
       </ul>
-      <table class="table table-hover" style="background-color: lightblue">
+      <table class="table table-striped">
         <thead>
           <th>Nama Player</th>
           <th>Nickname</th>
           <th>Rank</th>
           <th>Photo</th>
-          <th>RADIO BUTTON</th>
+          <th>Radio Button</th>
           <th>Aksi</th>
         </thead>
         <tbody>
@@ -28,8 +28,8 @@
                 <input type="radio" name="radiobutton" value="accept" checked="checked">Ditol
               </td>
               <td>
-                <a href="<?php echo base_url("index.php/pemain/update/".$value['id']) ?>" class="btn btn-sm btn-warning">Edit</a>
-                <a href="<?php echo base_url("index.php/pemain/deleteData/".$value['id']) ?>" class="btn btn-sm btn-danger">Hapus</a>
+                <a href="<?php echo base_url("index.php/pemain/update/".$value['id']) ?>" class="btn btn-sm btn-link">Edit</a>
+                <a href="<?php echo base_url("index.php/pemain/deleteData/".$value['id']) ?>" class="btn btn-sm btn-link">Hapus</a>
               </td>
             </tr>
             
