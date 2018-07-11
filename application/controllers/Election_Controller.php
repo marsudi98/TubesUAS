@@ -22,7 +22,6 @@ class Election_Controller extends CI_Controller {
 	}
 	
 	function cast_vote(){
-		 $this->load->model('Election_Model');
 		 $selected_coach = $this->input->post('coach');
 		 $coach_vote = $this->Election_Model->add_vote_coach($selected_coach);
 		 

@@ -37,6 +37,15 @@ class Login extends CI_Controller {
 		
 	}
 
+ 	public function logout()
+ 	{
+ 		$this->session->unset_userdata('logged_in');
+ 		$this->session->sess_destroy();
+ 		redirect('login','refresh');
+ 	}
+}
+
+
 	// public function auth()
  // 	{
  // 		$this->load->library('form_validation');
@@ -122,13 +131,6 @@ class Login extends CI_Controller {
  // 		}
  // 	}
 
- 	public function logout()
- 	{
- 		$this->session->unset_userdata('logged_in');
- 		$this->session->sess_destroy();
- 		redirect('login','refresh');
- 	}
-}
 
 /* End of file Login.php */
 /* Location: ./application/controllers/Login.php */
