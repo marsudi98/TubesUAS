@@ -5,11 +5,15 @@ class Election_Controller extends CI_Controller {
 
 	function __construct(){
        parent::__construct();
-       $this->load->model('election_model');
  	}
 
 	public function index(){
-		$this->load->view('home');
+		$this->load->helper('url','form');
+		$this->load->model('Election_Model');
+		$data['coach_list'] = $this->Election_Model->getDatacoach();
+		$data['gk_list'] = $this->Election_Model->getDatagk();
+		$data['mfp_list'] = $this->Election_Model->getDatamfp();
+		$this->load->view('election_data_page', $data);
 	}
 
 	public function voting_page()
@@ -18,17 +22,18 @@ class Election_Controller extends CI_Controller {
 	}
 	
 	function cast_vote(){
-		 $selected_president = $this->input->post('president');
-		 $presidential_vote = $this->election_model->add_vote_president($selected_president);
+		 $this->load->model('Election_Model');
+		 $selected_coach = $this->input->post('coach');
+		 $coach_vote = $this->Election_Model->add_vote_coach($selected_coach);
 		 
-		 $selected_vice_president = $this->input->post('vice-president');
-		 $vice_presidential_vote = $this->election_model->add_vote_vice_president($selected_vice_president);
+		 $selected_gk = $this->input->post('gk');
+		 $gk_vote = $this->Election_Model->add_vote_gk($selected_gk);
 		 
-		 foreach ($this->input->post('senator') as $selected_senator){
-			 $senatorial_vote = $this->election_model->add_vote_senator($selected_senator);
+		 foreach ($this->input->post('mfp') as $selected_mfp){
+			 $mfp_vote = $this->Election_Model->add_vote_mfp($selected_mfp);
 		 }
 
-		 redirect('election_controller/vote_success');
+		 redirect('Election_controller/vote_success');
 		 //$this->index();
 	}
 
