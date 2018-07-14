@@ -6,4 +6,4 @@ class model_user extends CI_Model
 		$query = $this->db->get_where('user',$data);
 		return $query;
 	}
-}
+}	

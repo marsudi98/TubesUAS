@@ -14,7 +14,7 @@
 							<h1><span class="glyphicon glyphicon-thumbs-up"></span> Vote Successful</h1>
 							<h2>Thank You for Voting</h2>
 						</div>
-						<a href="<?php echo site_url('election_controller'); ?>">
+						<a href="<?php echo site_url('Election_Controller'); ?>">
 							<button type="button" class="btn btn-info btn">
 								<span class="glyphicon glyphicon-edit"></span> Vote Again
 							</button>

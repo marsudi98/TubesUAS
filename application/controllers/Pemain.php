@@ -8,7 +8,8 @@ class Pemain extends CI_Controller {
 		$this->load->helper('url','form');
 		$this->load->model('Pemain_model');
 		$data['pemain_list'] = $this->Pemain_model->getDatapemain();
-		$this->load->view('pemain_admin', $data);
+		$data['mvp'] = $this->Pemain_model->getpemain();
+		$this->load->view('admin/data_candidate', $data);
 	}
 
 	public function create()

@@ -1,4 +1,4 @@
-<?php
+	<?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
 	class Pemain_model extends CI_Model
@@ -6,8 +6,9 @@
 		public function getDatapemain()
 		{
 			$query = $this->db->get("pemain");
-			return $query->result_array();
+			return $query->result();
 		}
+
 		public function insertpemain()
 		{
 			$tgl 				= $this->input->post('tanggalGabung');
@@ -20,14 +21,15 @@
 				'photo'			=> $this->upload->data('file_name')
 			);
 			$this->db->insert('pemain', $object);
-
 		}
 
-		public function getpemain($id)
-		{
-			$this->db->where('id', $id);
-			$query 				= $this->db->get('pemain');
+		public function getpemain()
+		{	
+			$query = $this->db->get("pemain");
 			return $query->result();
+			// $query = $this->db->get('pemain');
+			// $this->db->where('id', $id);
+			// return $query->result_array();
 		}
 
 		public function updateById($id)
@@ -43,7 +45,7 @@
 			$this->db->update('pemain', $data);
 		}
 		public function delete($id) { 
-         if ($this->db->delete("pemain", "id = ".$id)) { 
+         if ($this->db->delete('pemain', 'id = '.$id)) { 
             return true; 
          } 
       } 
