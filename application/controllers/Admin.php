@@ -7,8 +7,14 @@ class Admin extends CI_Controller {
 	{	
 		$this->load->helper('url','form');
 		$this->load->model('Pemain_model');
+<<<<<<< HEAD
 		$this->load->view('admin/data_candidate', $data);
 		$data['pemain_list'] = $this->Pemain_model->getDatapemain();
+=======
+		$data['pemain_list'] = $this->Pemain_model->getDatapemain();
+		$data['mvp'] = $this->Pemain_model->getpemain();
+		$this->load->view('admin/data_candidate', $data);		
+>>>>>>> fb1f8269257999f20301fa9c442bb2fbeeab702b
 	}
 
 	public function create()

@@ -22,6 +22,7 @@ class Election_Controller extends CI_Controller {
 	}
 	
 	function cast_vote(){
+<<<<<<< HEAD
 		$this->load->model('Election_Model');
 		$selected_coach = $this->input->post('coach');
 		$coach_vote = $this->Election_Model->add_vote_coach($selected_coach);
@@ -35,6 +36,20 @@ class Election_Controller extends CI_Controller {
 
 		redirect('Election_controller/vote_success');
 		//$this->index();
+=======
+		 $selected_coach = $this->input->post('coach');
+		 $coach_vote = $this->Election_Model->add_vote_coach($selected_coach);
+		 
+		 $selected_gk = $this->input->post('gk');
+		 $gk_vote = $this->Election_Model->add_vote_gk($selected_gk);
+		 
+		 foreach ($this->input->post('mfp') as $selected_mfp){
+			 $mfp_vote = $this->Election_Model->add_vote_mfp($selected_mfp);
+		 }
+
+		 redirect('Election_controller/vote_success');
+		 //$this->index();
+>>>>>>> fb1f8269257999f20301fa9c442bb2fbeeab702b
 	}
 
 	function vote_success(){
