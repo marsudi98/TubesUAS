@@ -17,12 +17,6 @@
     <link href="<?php echo base_url() ?>assets/vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="<?php echo base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
     <div id="wrapper">
@@ -102,7 +96,7 @@
         <div id="page-wrapper">
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">Data Candidate</h1>
             </div>
             <!-- /.col-lg-12 -->
           </div>
@@ -110,26 +104,81 @@
             <div class="row">
               <div class="col-lg-12">
                 
+                  <a href="<?php echo base_url('index.php/coach/create') ?>" class="btn btn-primary my-3 float-right"><b>Tambah</b></a>
+    
+                <table class="table table-striped">
+                  <thead>
+                    <th>Nama Player</th>
+                    <th>Nickname</th>
+                    <th>Rank</th>
+                    <th>Photo</th>
+                    <th>Radio Button</th>
+                    <th>Aksi</th>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($pemain_list as $key) {
+                      ?>
+                      <tr>
+                        <td><?php echo $key->nama ?></td>
+                        <td><?php echo $key->nickname ?></td>
+                        <td><?php echo $key->rank ?></td>
+                        <td><img src="<?php echo base_url()?>assets/uploads/<?php echo $key->nama?>" alt="" width=100 height=100></td>
+                        <td><?php echo $key->tanggalGabung ?>
+                          <input type="checkbox" name="newsletter" value="accept" checked="checked" /> Check box
+                          <input type="radio" name="radiobutton" value="accept" checked="checked">Dito
+                          <input type="radio" class="custom-control-input" name="radiobutton" value="accept" checked="checked">Ditol
+                        </td>
+                        <td>
+                          <a href="<?php echo base_url("index.php/coach/update/".$key->id) ?>" class="btn btn-sm btn-link">Edit</a>
+                          <a href="<?php echo base_url("index.php/coach/deleteData/".$key->id) ?>" class="btn btn-sm btn-link">Hapus</a>
+                        </td>
+                      </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+
+                <br><br>
+<!-- 
+                <div class="row">
+                  <?php foreach ($mvp as $key) { ;?>
+                  <div class="col-md-4">        
+                    <div class="thumbnail" align="center">
+                      <img src="<?php echo base_url()?>assets/uploads/<?php echo $key->photo?>" class="img-fluid" alt="MVP" width=200 height=200>
+                    </div>
+                    <h3 class="text-center"><?php echo $key->nama ?></h3>        
+                  </div>
+                  <?php } ?>
+                </div>    -->
               </div>
             </div>
+
+
+
         </div>
         <!-- /#page-wrapper -->
+
     </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
     <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
+
     <!-- Morris Charts JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/raphael/raphael.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/morrisjs/morris.min.js"></script>
     <script src="<?php echo base_url() ?>assets/data/morris-data.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url() ?>assets/dist/js/sb-admin-2.js"></script>
+
 </body>
+
 </html>
 
 

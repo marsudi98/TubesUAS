@@ -17,12 +17,6 @@
     <link href="<?php echo base_url() ?>assets/vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="<?php echo base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
     <div id="wrapper">
@@ -99,40 +93,71 @@
             <!-- /.navbar-static-side -->
         </nav>
 
+
         <div id="page-wrapper">
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">Edit Coach Candidate</h1>
             </div>
             <!-- /.col-lg-12 -->
           </div>
             <!-- /.row -->
             <div class="row">
               <div class="col-lg-12">
-                
-              </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <?php echo form_open_multipart('coach/update/'.$this->uri->segment(3)); ?>
+                  <?php echo validation_errors(); ?>
+                  <div class="form-group">
+                    <label for=""><b>Nama Pemain</b></label>
+                    <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $pemain[0]->nama ?>" placeholder="Input field">
+                  </div>
+                  <div class="form-group">
+                    <label for=""><b>Nickname</b></label>
+                    <input type="text" class="form-control" name="nickname" id="nickname" value="<?php echo $pemain[0]->nickname ?>" placeholder="Input field">
+                  </div>
+                  <div class="form-group">
+                    <label for=""><b>Rank</b></label>
+                    <input type="text" class="form-control" name="rank" id="rank" value="<?php echo $pemain[0]->rank ?>" placeholder="Input field">
+                  </div>
+                  <div class="form-group">
+                    <label for="">Photo</label>
+                    <input type="file" class="form-control" name="userfile" value="<?php echo $pemain[0]->photo?>" placeholder="Input field">
+                  </div>
+                  <div class="form-group">
+                    <label for=""><b>Tanggal Join</b></label>
+                    <input type="date" name="tanggalGabung" placeholder="YYYY-MM-DD" id="tanggalGabung" class="form-control" 
+                          pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" 
+                          title="Enter a date in this format YYYY-MM-DD"/>
+                  </div>
+                  <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+                  <?php echo form_close(); ?>
+                </div>
             </div>
-        </div>
         <!-- /#page-wrapper -->
+
     </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
     <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
+
     <!-- Morris Charts JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/raphael/raphael.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/morrisjs/morris.min.js"></script>
     <script src="<?php echo base_url() ?>assets/data/morris-data.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url() ?>assets/dist/js/sb-admin-2.js"></script>
+
 </body>
+
 </html>
-
-
 
 
 
