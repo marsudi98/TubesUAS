@@ -1,22 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pemain extends CI_Controller {
+class Coach extends CI_Controller {
 
 	public function index()
-	{
+	{	
 		$this->load->helper('url','form');
-		$this->load->model('Pemain_model');
-		$data['pemain_list'] = $this->Pemain_model->getDatapemain();
-		$data['mvp'] = $this->Pemain_model->getpemain();
-		$this->load->view('admin/data_candidate', $data);
+		$this->load->model('Admin_model');
+		$data['pemain_list'] = $this->Admin_model->getDatapemain();
+		$data['mvp'] = $this->Admin_model->getpemain();
+		$this->load->view('admin/data_candidatecoach', $data);		
 	}
 
 	public function create()
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
-		$this->load->model('Pemain_model');
+		$this->load->model('Admin_model');
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 		$this->form_validation->set_rules('nickname', 'Nickname', 'trim|required');
 		$this->form_validation->set_rules('rank', 'Rank', 'trim|required');
@@ -24,7 +24,7 @@ class Pemain extends CI_Controller {
 
 		if ($this->form_validation->run()==FALSE)
 		{
-			$this->load->view('tambah_pemain_view');
+			$this->load->view('admin/data_candidatecoach_tambah');
 		}
 		else
 		{
@@ -39,12 +39,12 @@ class Pemain extends CI_Controller {
 			if ( ! $this->upload->do_upload('userfile'))
 			{
 				$error = array('error' => $this->upload->display_errors());
-				$this->load->view('tambah_pemain_view', $error);
+				$this->load->view('admin/data_candidatecoach_tambah', $error);
 			}
 			else
 			{
-				$this->Pemain_model->insertpemain();
-				$this->load->view('tambah_pemain_data');
+				$this->Admin_model->insertpemain();
+				$this->load->view('admin/data_candidatecoach_data');
 			}
 		}
 		
@@ -54,8 +54,8 @@ class Pemain extends CI_Controller {
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
-		$this->load->model('Pemain_model');
-		$data['pemain'] = $this->Pemain_model->getpemain($id);
+		$this->load->model('Admin_model');
+		$data['pemain'] = $this->Admin_model->getpemain($id);
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 		$this->form_validation->set_rules('nickname', 'Nickname', 'trim|required');
 		$this->form_validation->set_rules('rank', 'Rank', 'trim|required');
@@ -64,7 +64,7 @@ class Pemain extends CI_Controller {
 
 		if ($this->form_validation->run()==FALSE)
 		{
-			$this->load->view('edit_pemain_view', $data);
+			$this->load->view('admin/data_candidatecoach_editview', $data);
 		}
 		else
 		{
@@ -79,21 +79,24 @@ class Pemain extends CI_Controller {
 			if ( ! $this->upload->do_upload('userfile'))
 			{
 				$error = array('error' => $this->upload->display_errors());
-				$this->load->view('edit_pemain_view', $error);
+				$this->load->view('admin/data_candidatecoach_editview', $error);
 			}
 			else
 			{
-				$this->pemain_model->updateById($id);
-				$this->load->view('edit_pemain_data');
+				$this->Admin_model->updateById($id);
+				$this->load->view('admin/data_candidatecoach_editdata');
 			}
 		}
 	}
 
 	public function deleteData($id)
 	{
-		$this->load->helper("url");
-		$this->load->model("Pemain_model");
-		$this->pemain_model->delete($id);
-		redirect('pemain');
+		$this->load->helper('url');
+		$this->load->model('Admin_model');
+		$this->Admin_model->delete($id);
+		redirect('admin');
 	}
 }
+
+/* End of file Coach_Controller.php */
+/* Location: ./application/controllers/Coach_Controller.php */
