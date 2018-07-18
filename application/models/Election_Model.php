@@ -20,6 +20,28 @@ class Election_Model extends CI_Model
 		return $query->result();
 	}
 
+	public function maxvoteCoach()
+	{
+		return $this->db->query("SELECT fullname, nation, MAX(votes) as maxcoach FROM coach_candidate ")->result();
+	}
+
+	public function maxvoteMFP()
+	{
+		return $this->db->query("SELECT fullname, negara, MAX(votes) as maxmfp FROM mfp_candidate ")->result();
+	}
+
+	public function maxvoteGK()
+	{
+		return $this->db->query("SELECT fullname, nation, MAX(votes) as maxgk FROM gk_candidate ")->result();
+	}
+
+	public function count_vote()
+	{		
+		return $this->db->query("SELECT nation,votes FROM coach_candidate ORDER BY nation DESC")->result_array();
+	}
+
+	
+
 	// public function getDataCandidate()
 	// {
 	// 	$this->db->select('*');
@@ -68,5 +90,5 @@ class Election_Model extends CI_Model
 		$this->db->update('mfp_candidate'); 
    	}		 
 }
-
+	
 ?>
