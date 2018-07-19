@@ -1,98 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Admin Pages - Voting System</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- MetisMenu CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="<?php echo base_url() ?>assets/dist/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/morrisjs/morris.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="<?php echo base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Admin</a>
-            </div>
-            <!-- /.navbar-header -->
-            <ul class="nav navbar-top-links navbar-right">
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Action</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Another action</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-table fa-fw"></i> Something else here</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo base_url('index.php/login/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                                </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url('index.php/admin/index') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Data Candidate<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="<?php echo base_url('index.php/coach/index') ?>">Coach Candidate</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('index.php/mfp/index') ?>">MFP Candidate</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('index.php/gk/index') ?>">GK Candidate</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
+<?php 
+    $this->load->view('admin/header');
+?>
 
         <div id="page-wrapper">
           <div class="row">
@@ -103,60 +11,42 @@
           </div>
             <!-- /.row -->
             <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-6">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <?php echo form_open_multipart('coach/update/'.$this->uri->segment(3)); ?>
                   <?php echo validation_errors(); ?>
                   <div class="form-group">
-                    <label for=""><b>Nama Pemain</b></label>
-                    <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $pemain[0]->nama ?>" placeholder="Input field">
+                    <label for=""><b>Fullname</b></label>
+                    <input type="text" class="form-control" name="fullname" id="fullname" value="<?php echo $coach[0]->fullname ?>" placeholder="Input field">
                   </div>
                   <div class="form-group">
-                    <label for=""><b>Nickname</b></label>
-                    <input type="text" class="form-control" name="nickname" id="nickname" value="<?php echo $pemain[0]->nickname ?>" placeholder="Input field">
-                  </div>
-                  <div class="form-group">
-                    <label for=""><b>Rank</b></label>
-                    <input type="text" class="form-control" name="rank" id="rank" value="<?php echo $pemain[0]->rank ?>" placeholder="Input field">
+                    <label for=""><b>Nation</b></label>
+                    <input type="text" class="form-control" name="nation" id="nation" value="<?php echo $coach[0]->nation ?>" placeholder="Input field">
                   </div>
                   <div class="form-group">
                     <label for="">Photo</label>
-                    <input type="file" class="form-control" name="userfile" value="<?php echo $pemain[0]->photo?>" placeholder="Input field">
-                  </div>
-                  <div class="form-group">
-                    <label for=""><b>Tanggal Join</b></label>
-                    <input type="date" name="tanggalGabung" placeholder="YYYY-MM-DD" id="tanggalGabung" class="form-control" 
-                          pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" 
-                          title="Enter a date in this format YYYY-MM-DD"/>
+                    <input type="file" class="form-control" name="userfile" value="<?php echo $coach[0]->photo?>" placeholder="Input field">
                   </div>
                   <button type="submit" class="btn btn-primary"><b>Submit</b></button>
                   <?php echo form_close(); ?>
                 </div>
             </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
-
     <!-- jQuery -->
     <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
-
     <!-- Morris Charts JavaScript -->
     <script src="<?php echo base_url() ?>assets/vendor/raphael/raphael.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/morrisjs/morris.min.js"></script>
     <script src="<?php echo base_url() ?>assets/data/morris-data.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url() ?>assets/dist/js/sb-admin-2.js"></script>
-
 </body>
-
 </html>
 
 

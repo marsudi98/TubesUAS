@@ -5,7 +5,7 @@
         <div id="page-wrapper">
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Coach Candidate</h1>
+                <h1 class="page-header">Edit GK Candidate</h1>
             </div>
             <!-- /.col-lg-12 -->
           </div>
@@ -15,7 +15,8 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <?php 
                         echo "Sukses update data!";
-                        echo anchor('coach', ' Back.'); 
+
+                        echo anchor('gk', ' Back.'); 
                     ?>
                 </div>
             </div>

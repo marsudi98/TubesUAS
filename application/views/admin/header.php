@@ -17,12 +17,6 @@
     <link href="<?php echo base_url() ?>assets/vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="<?php echo base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
     <div id="wrapper">
@@ -35,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin</a>
+                <a class="navbar-brand" href="<?php echo base_url('index.php/admin/index') ?>">Administrator Pages!</a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
@@ -45,11 +39,10 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Action</a>
+                     
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> ---</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Another action</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-table fa-fw"></i> Something else here</a>
+                        <li><a href="#"><i class="fa fa-table fa-fw"></i> ---</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="<?php echo base_url('index.php/login/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
@@ -70,12 +63,45 @@
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
-                            </span>
+                                </span>
                             </div>
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i>Data Candidate</a>
+                            <a href="<?php echo base_url('index.php/admin/index') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('index.php/admin/user') ?>"><i class="fa fa-user fa-fw"></i> Data User</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-list-ul fa-fw"></i> Data Candidate<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo base_url('index.php/coach/index') ?>">Coach Candidate</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('index.php/mfp/index') ?>">MFP Candidate</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('index.php/gk/index') ?>">GK Candidate</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Data Candidate jsGrid<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo base_url('index.php/Coach_Data_Grid/coach_gridDinamis') ?>">Coach Candidate</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('index.php/MFP_Data_Grid/mfp_gridDinamis') ?>">MFP Candidate</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('index.php/GK_Data_Grid/gk_gridDinamis') ?>">GK Candidate</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                     </ul>
                 </div>
@@ -83,52 +109,3 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-        <div id="page-wrapper">
-          <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Tambah Data Candidate</h1>
-            </div>
-            <!-- /.col-lg-12 -->
-          </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    	<?php 
-							echo "Sukses submit data!";
-
-							echo anchor('pemain', ' Masukkan Data Lagi'); 
-						?>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="<?php echo base_url() ?>assets/vendor/raphael/raphael.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendor/morrisjs/morris.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/data/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url() ?>assets/dist/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>
