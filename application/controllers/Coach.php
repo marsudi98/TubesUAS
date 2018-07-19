@@ -6,9 +6,8 @@ class Coach extends CI_Controller {
 	public function index()
 	{	
 		$this->load->helper('url','form');
-		$this->load->model('Admin_model');
-		$data['pemain_list'] = $this->Admin_model->getDatapemain();
-		$data['mvp'] = $this->Admin_model->getpemain();
+		$this->load->model('Coach_Model');
+		$data['coach_list'] = $this->Coach_Model->getDatacoach();
 		$this->load->view('admin/data_candidatecoach', $data);		
 	}
 
@@ -16,16 +15,13 @@ class Coach extends CI_Controller {
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
-		$this->load->model('Admin_model');
-		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('nickname', 'Nickname', 'trim|required');
-		$this->form_validation->set_rules('rank', 'Rank', 'trim|required');
-		$this->form_validation->set_rules('tanggalGabung', 'Tgl Gabung', 'trim|required');
-
+		$this->load->model('Coach_Model');
+		$this->form_validation->set_rules('fullname', 'fullname', 'trim|required');
+		$this->form_validation->set_rules('nation', 'nation', 'trim|required');
 		if ($this->form_validation->run()==FALSE)
-		{
+		{	
 			$this->load->view('admin/data_candidatecoach_tambah');
-		}
+		}	
 		else
 		{
 			$config['upload_path']		= './assets/uploads/';
@@ -43,7 +39,7 @@ class Coach extends CI_Controller {
 			}
 			else
 			{
-				$this->Admin_model->insertpemain();
+				$this->Coach_Model->insertcoach();
 				$this->load->view('admin/data_candidatecoach_data');
 			}
 		}
@@ -54,12 +50,10 @@ class Coach extends CI_Controller {
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
-		$this->load->model('Admin_model');
-		$data['pemain'] = $this->Admin_model->getpemain($id);
-		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('nickname', 'Nickname', 'trim|required');
-		$this->form_validation->set_rules('rank', 'Rank', 'trim|required');
-		$this->form_validation->set_rules('tanggalGabung', 'Tgl Gabung', 'trim|required');
+		$this->load->model('Coach_Model');
+		$data['coach'] = $this->Coach_Model->getcoach($id);
+		$this->form_validation->set_rules('fullname', 'fullname', 'trim|required');
+		$this->form_validation->set_rules('nation', 'nation', 'trim|required');
 
 
 		if ($this->form_validation->run()==FALSE)
@@ -83,7 +77,7 @@ class Coach extends CI_Controller {
 			}
 			else
 			{
-				$this->Admin_model->updateById($id);
+				$this->Coach_Model->updateById($id);
 				$this->load->view('admin/data_candidatecoach_editdata');
 			}
 		}
@@ -92,8 +86,8 @@ class Coach extends CI_Controller {
 	public function deleteData($id)
 	{
 		$this->load->helper('url');
-		$this->load->model('Admin_model');
-		$this->Admin_model->delete($id);
+		$this->load->model('Coach_Model');
+		$this->Coach_Model->delete($id);
 		redirect('admin');
 	}
 }

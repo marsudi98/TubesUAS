@@ -27,7 +27,7 @@ class Election_Model extends CI_Model
 
 	public function maxvoteMFP()
 	{
-		return $this->db->query("SELECT fullname, negara, MAX(votes) as maxmfp FROM mfp_candidate ")->result();
+		return $this->db->query("SELECT fullname, nation, MAX(votes) as maxmfp FROM mfp_candidate ")->result();
 	}
 
 	public function maxvoteGK()

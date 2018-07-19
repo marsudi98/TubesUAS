@@ -3,13 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
+	// public function __construct()
+	// {
+	// 	parent::__construct();
+	// 	if($this->session->userdata('logged_in') == null){
+	// 		redirect('login','refresh');
+	// 	} 
+	// }
+
 	public function index()
 	{	
 		$this->load->helper('url','form');
 		$this->load->model('Admin_model');
-		$data['pemain_list'] = $this->Admin_model->getDatapemain();
-		$data['mvp'] = $this->Admin_model->getpemain();
-		$this->load->view('admin/index', $data);		
+		$this->load->view('admin/index');		
 	}
 	
 }

@@ -9,24 +9,27 @@ class Login extends CI_Controller {
 	}
 
 	public function cek_login()
-	{
-		$data = array('username' => $this->input->post('username') , 
+	{	
+		$data = array('username' => $this->input->post('username'), 
 					  'password' => $this->input->post('password')
 					  );
-		$this->load->model('model_user');
-		$hasil = $this->model_user->cek_user($data);
+		$this->load->model('User_Model');
+		$hasil = $this->User_Model->cek_user($data);
 		if ($hasil->num_rows() == 1){
 			foreach($hasil->result() as $sess)
             {
-              $sess_data['logged_in'] = 'Sudah Login';
+              //$sess_data['logged_in'] = 'Sudah Login';
               $sess_data['username'] = $sess->username;
               $sess_data['level'] = $sess->level;
-              $this->session->set_userdata($sess_data);
             }
-			if ($this->session->userdata('level')=='admin'){
+            $this->session->set_userdata('logged_in',$sess_data);
+
+            $data = $this->session->userdata('logged_in');
+            $level = $data['level'];
+			if ($level =='admin'){
 				redirect('admin');
 			}
-			elseif ($this->session->userdata('level')=='user'){
+			elseif ($level =='user'){
 				redirect('Election_Controller');
 			}
 		}
@@ -80,7 +83,7 @@ class Login extends CI_Controller {
 	// // 	$data = array('username' => $this->input->post('username') , 
 	// // 				  'password' => $this->input->post('password')
 	// // 				  );
-	// // 	$hasil = $this->model_user->cek_user($data);
+	// // 	$hasil = $this->User_Model->cek_user($data);
 	// // 	if ($hasil->num_rows() == 1){
 	// // 		foreach($hasil->result() as $sess)
  // //            {
