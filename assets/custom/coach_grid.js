@@ -1,7 +1,7 @@
 $(function() {
   $.ajax({
     type: "GET",
-    url: "getAllPemain/"
+    url: "getAllCoach/"
   }).done(function(countries) {
     countries.unshift({ id: "0", name: "" });
 
@@ -21,63 +21,63 @@ $(function() {
         loadData: function(filter) {
           return $.ajax({
             type: "GET",
-            url: "getAllPemain/",
+            url: "getAllCoach/",
             data: filter
           });
         },
         insertItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "addPemain/",
+            url: "addCoach/",
             data: item
           });
         },
        updateItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "updatePemain",
+            url: "updateCoach",
             data: item
           });
         },
         deleteItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "deletePemain/",
+            url: "deleteCoach/",
             data: item
           });
         }
       },
       fields: [
         {
-          name: "nama",
-          title: "Nama Pemain",
+          name: "fullname",
+          title: "Nama Coach",
           type: "text",
           width: 50
         },
           {
-          name: "nickname",
-          title: "Nickname",
+          name: "nation",
+          title: "Negara",
           type: "text",
           width: 50
         },
         {
-          name: "rank",
-          title: "Rank",
+          name: "votes",
+          title: "Votes",
           type: "text",
           width: 50
         },
         {
           name: "photo",
-          title: "Logo",
+          title: "Foto",
           type: "image",
           width: 50
         },
-          {
-          name: "tanggalGabung",
-          title: "Tanggal Gabung",
-          type: "text",
-          width: 50
-        },
+        //   {
+        //   name: "tanggalGabung",
+        //   title: "Tanggal Gabung",
+        //   type: "text",
+        //   width: 50
+        // },
         { type: "control" }
       ]
     });
