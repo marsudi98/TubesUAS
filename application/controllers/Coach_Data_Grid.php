@@ -5,7 +5,7 @@ class Coach_Data_Grid extends CI_Controller {
 
 public function coach_gridDinamis()
     {
-        $this->load->view('coach_gridDinamisView');
+        $this->load->view('admin/gridDinamisView_coach');
     }
 
     public function getAllCoach()

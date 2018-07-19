@@ -55,25 +55,25 @@ $(function() {
           width: 50
         },
         {
-          name: "negara",
+          name: "nation",
           title: "Negara",
           type: "text",
           width: 50
         },
         {
-          name : "lahir",
+          name : "birth",
           title: "Tanggal Lahir",
           type : "text",
           width: 50
         },
         {
-          name : "no_punggung",
+          name : "number",
           title: "Nomor Punggung",
           type : "text",
           width: 50
         },
         {
-          name : "posisi",
+          name : "position",
           title: "Posisi",
           type : "text",
           width: 50
