@@ -1,9 +1,20 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Coach_Data_Grid extends CI_Controller {
+class Coach_dataGrid extends CI_Controller {
+    public function __construct()
+    {
+        parent::__construct();
+        if($this->session->userdata('logged_in') == NULL ){
+            echo '<script>alert("Sorry, you\'re not logged in!")</script>';
+            redirect('login','refresh');
+        } elseif($this->session->userdata('logged_in')['level'] == 'user'){
+            echo '<script>alert("Sorry, you\'re not admin!")</script>';
+            redirect('voting','refresh');
+        }
+    }
 
-public function coach_gridDinamis()
+    public function coach_gridDinamis()
     {
         $this->load->view('admin/gridDinamisView_coach');
     }

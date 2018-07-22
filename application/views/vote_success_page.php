@@ -12,11 +12,11 @@
 					<div class="text-center">
 						<div class="well form-group">
 							<h1><span class="glyphicon glyphicon-thumbs-up"></span> Vote Successful</h1>
-							<h2>Thank You for Voting</h2>
+							<h2>Thank You for Voting!</h2>
 						</div>
-						<a href="<?php echo site_url('Election_Controller'); ?>">
+						<a href="<?php echo site_url('voting'); ?>">
 							<button type="button" class="btn btn-info btn">
-								<span class="glyphicon glyphicon-edit"></span> Vote Again
+								<span class="glyphicon glyphicon-edit"></span>Vote Result
 							</button>
 						</a>
 					</div>

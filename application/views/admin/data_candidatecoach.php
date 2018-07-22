@@ -13,7 +13,7 @@
           <div class="row">
             <div class="col-lg-12">
               <a href="<?php echo base_url('index.php/coach/create') ?>" class="btn btn-primary my-3 float-right">
-                <b>Tambah</b>
+                <b>Add Data</b>
               </a>
               <table class="table table-striped">
                 <thead>

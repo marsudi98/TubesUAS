@@ -29,7 +29,7 @@
                         <td><?php echo $key->level ?></td>
                         <td>
                           <a href="<?php echo base_url("index.php/admin/updateUser/".$key->id) ?>" class="btn btn-sm btn-link">Edit</a>
-                          <a href="<?php echo base_url("index.php/admin/deleteUser/".$key->id) ?>" class="btn btn-sm btn-link">Hapus</a>
+                          <a href="<?php echo base_url("index.php/admin/deleteUser/".$key->id) ?>" class="btn btn-sm btn-link" onclick="return confirm('Are you sure you want to delete this item?');">Hapus</a>
                         </td>
                       </tr>
                     <?php } ?>

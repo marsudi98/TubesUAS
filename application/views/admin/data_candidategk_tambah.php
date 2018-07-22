@@ -19,15 +19,15 @@
 
                         <div class="form-group">
                             <label for=""><b>Fullname</b></label>
-                            <input type="text" class="form-control" name="fullname" placeholder="Input field">
+                            <input type="text" class="form-control" name="fullname" placeholder="Fullname">
                         </div>
                         <div class="form-group">
                             <label for=""><b>Nation</b></label>
-                            <input type="text" class="form-control" name="nation" placeholder="Input field">
+                            <input type="text" class="form-control" name="nation" placeholder="Nation">
                         </div>
                         <div class="form-group">
                             <label for=""><b>Number</b></label>
-                            <input type="text" class="form-control" name="number" placeholder="Input field"> 
+                            <input type="text" class="form-control" name="number" placeholder="Number"> 
                         </div>
                         <div class="form-group">
                             <label for=""><b>Photo</b></label>

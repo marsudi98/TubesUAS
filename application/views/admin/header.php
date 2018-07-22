@@ -39,10 +39,7 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                     
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> ---</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-table fa-fw"></i> ---</a>
+                        <li><a href="<?php echo base_url('index.php/voting') ?>"><i class="fa fa-location-arrow fa-fw"></i> Go to site</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="<?php echo base_url('index.php/login/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
@@ -92,13 +89,13 @@
                             <a href="#"><i class="fa fa-table fa-fw"></i> Data Candidate jsGrid<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url('index.php/Coach_Data_Grid/coach_gridDinamis') ?>">Coach Candidate</a>
+                                    <a href="<?php echo base_url('index.php/Coach_dataGrid/coach_gridDinamis') ?>">Coach Candidate</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('index.php/MFP_Data_Grid/mfp_gridDinamis') ?>">MFP Candidate</a>
+                                    <a href="<?php echo base_url('index.php/Mfp_dataGrid/mfp_gridDinamis') ?>">MFP Candidate</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('index.php/GK_Data_Grid/gk_gridDinamis') ?>">GK Candidate</a>
+                                    <a href="<?php echo base_url('index.php/Gk_dataGrid/gk_gridDinamis') ?>">GK Candidate</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

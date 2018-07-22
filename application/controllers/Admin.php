@@ -3,6 +3,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		if($this->session->userdata('logged_in') == NULL ){
+			echo '<script>alert("Sorry, you\'re not logged in!")</script>';
+			redirect('login','refresh');
+		} elseif($this->session->userdata('logged_in')['level'] == 'user'){
+			echo '<script>alert("Sorry, you\'re not admin!")</script>';
+			redirect('voting','refresh');
+		}
+
+		if($this->session->userdata('logged_in')['is_voted']  ){
+			echo '<script>alert("Sorry, you\'re not logged in!")</script>';
+			redirect('login','refresh');
+		} elseif($this->session->userdata('logged_in')['level'] == 'user'){
+			echo '<script>alert("Sorry, you\'re not admin!")</script>';
+			redirect('voting','refresh');
+		}
+	}
+
+	public function getUserSess()
+	{
+		$this->load->helper('url','form');
+		$this->load->model('Admin_Model');
+		$data['user_list'] = $this->Admin_Model->getDataUser();
+		$this->load->view('header', $data);
+	}
+
 	public function index()
 	{	
 		$this->load->helper('url','form');

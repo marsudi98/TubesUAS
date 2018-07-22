@@ -11,16 +11,22 @@ class Login extends CI_Controller {
 	public function cek_login()
 	{	
 		$data = array('username' => $this->input->post('username'), 
-					  'password' => $this->input->post('password')
+					  'password' => md5($this->input->post('password'))
 					  );
 		$this->load->model('User_Model');
-		$hasil = $this->User_Model->cek_user($data);
+		$where = array(
+		'username' => $username,
+		'password' => md5($password)
+		);
+		$hasil = $this->User_Model->cek_user($data, $where);
 		if ($hasil->num_rows() == 1){
 			foreach($hasil->result() as $sess)
             {
               $sess_data['logged_in'] = 'Sudah Login';
+              $sess_data['id'] = $sess->id;
               $sess_data['username'] = $sess->username;
               $sess_data['level'] = $sess->level;
+              $sess_data['is_voted'] = $sess->is_voted;
             }
             $this->session->set_userdata('logged_in',$sess_data);
             $data = $this->session->userdata('logged_in');
@@ -29,12 +35,12 @@ class Login extends CI_Controller {
 				redirect('admin');
 			}
 			elseif ($level =='user'){
-				redirect('Election_Controller');
+				redirect('voting');
 			}
 		}
 		else
 		{
-			echo " <script>alert('Gagal Login: Cek username , password!');history.go(-1);</script>";
+			echo " <script>alert('Login Failed: Check username , password!');history.go(-1);</script>";
 		}
 		
 	}

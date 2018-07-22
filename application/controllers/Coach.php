@@ -3,6 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Coach extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		if($this->session->userdata('logged_in') == NULL ){
+			echo '<script>alert("Sorry, you\'re not logged in!")</script>';
+			redirect('login','refresh');
+		} elseif($this->session->userdata('logged_in')['level'] == 'user'){
+			echo '<script>alert("Sorry, you\'re not admin!")</script>';
+			redirect('voting','refresh');
+		}
+	}
+
 	public function index()
 	{	
 		$this->load->helper('url','form');
@@ -88,7 +100,7 @@ class Coach extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Coach_Model');
 		$this->Coach_Model->delete($id);
-		redirect('admin');
+		redirect('coach');
 	}
 }
 

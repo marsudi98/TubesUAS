@@ -19,32 +19,28 @@
                         
                         <div class="form-group">
                             <label for=""><b>Fullname</b></label>
-                            <input type="text" class="form-control" name="fullname" placeholder="Input field">
+                            <input type="text" class="form-control" name="fullname" placeholder="Fullname">
                         </div>
                         <div class="form-group">
-                            <label for=""><b>Tanggal Lahir</b></label>
+                            <label for=""><b>Date of Birth</b></label>
                             <input type="date" name="birth" placeholder="date" class="form-control">
                         </div>
                         <div class="form-group"> 
-                            <label for=""><b>Negara</b></label>
-                            <input type="text" class="form-control" name="nation" placeholder="Input field"> 
+                            <label for=""><b>Nation</b></label>
+                            <input type="text" class="form-control" name="nation" placeholder="Nation"> 
                         </div>
                         <div class="form-group">
-                            <label for=""><b>Nomor Punggung</b></label>
-                            <input type="text" class="form-control" name="number" placeholder="Input field">
+                            <label for=""><b>Number</b></label>
+                            <input type="text" class="form-control" name="number" placeholder="Number">
                         </div>
                         <div class="form-group">
-                            <label for=""><b>Posisi</b></label>
-                            <input type="text" class="form-control" name="position" placeholder="Input field">
+                            <label for=""><b>Position</b></label>
+                            <input type="text" class="form-control" name="position" placeholder="Position">
                         </div>
                         <div class="form-group">
                             <label for=""><b>Photo</b></label>
                             <input type="file" class="form-control" name="userfile" size="20" />
-                            </div><!-- 
-                            <div class="form-group">
-                                <label for=""><b>Jumlah Vote</b></label>
-                                <input type="text" class="form-control" name="votes" placeholder="Input field" value="0" disabled>
-                            </div> -->
+                            </div>
                         <button type="submit" class="btn btn-primary my-3"><b>Submit</b></button>
                         <?php echo form_close(); ?>
                     </div>

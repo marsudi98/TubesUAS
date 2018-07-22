@@ -12,8 +12,8 @@
             <!-- /.row -->
             <div class="row">
               <div class="col-lg-12">
-                  <a href="<?php echo base_url('index.php/mfp/create') ?>" class="btn btn-primary my-3 float-right"><b>Tambah</b></a>
-                <table class="table table-striped">
+                  
+                <table class="table table-striped"><a href="<?php echo base_url('index.php/mfp/create') ?>" class="btn btn-primary my-3 float-right"><b>Add Data</b></a>
                   <thead>
                     <th>Player Name</th>
                     <th>Date Of Birth</th>

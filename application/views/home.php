@@ -9,7 +9,7 @@
         <p class="lead">Halaman ini digunakan untuk
         memilih pemain terbaik dari Piala Dunia 2018
         </p>
-        <a class="btn btn-lg btn-primary" href="<?php echo base_url('index.php/Election_Controller/index') ?>"" role="button">Let's vote!</a>
+        <a class="btn btn-lg btn-primary" href="<?php echo base_url('index.php/voting/index') ?>"" role="button">Let's vote!</a>
       </div>
     </main>
 

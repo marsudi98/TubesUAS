@@ -17,11 +17,11 @@
                   <?php echo validation_errors(); ?>
                   <div class="form-group">
                     <label for=""><b>Fullname</b></label>
-                    <input type="text" class="form-control" name="fullname" id="fullname" value="<?php echo $coach[0]->fullname ?>" placeholder="Input field">
+                    <input type="text" class="form-control" name="fullname" id="fullname" value="<?php echo $coach[0]->fullname ?>">
                   </div>
                   <div class="form-group">
                     <label for=""><b>Nation</b></label>
-                    <input type="text" class="form-control" name="nation" id="nation" value="<?php echo $coach[0]->nation ?>" placeholder="Input field">
+                    <input type="text" class="form-control" name="nation" id="nation" value="<?php echo $coach[0]->nation ?>">
                   </div>
                   <div class="form-group">
                     <label for="">Photo</label>

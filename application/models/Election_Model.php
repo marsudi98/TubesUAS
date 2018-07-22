@@ -20,6 +20,14 @@ class Election_Model extends CI_Model
 		return $query->result();
 	}
 
+
+	public function getDataSession()
+	{
+		$idSession = $this->session->userdata('logged_in')['id'];
+		$query = $this->db->query("SELECT is_voted FROM user WHERE id = $idSession");
+		return $query->result();
+	}
+
 	public function maxvoteCoach()
 	{
 		return $this->db->query("SELECT fullname, nation, MAX(votes) as maxcoach FROM coach_candidate ")->result();
@@ -40,22 +48,7 @@ class Election_Model extends CI_Model
 		return $this->db->query("SELECT nation,votes FROM coach_candidate ORDER BY nation DESC")->result_array();
 	}
 
-	
 
-	// public function getDataCandidate()
-	// {
-	// 	$this->db->select('*');
-	// 	$this->db->from('coach_candidate');
-	// 	$this->db->join('gk_candidate', 'coach_candidate.candidate_id = gk_candidate.candidate_id');
-	// 	$this->db->where('kandidat.no_kandidat', $id);
-	// 	$query = $this->db->get();
-	// 		if($query->num_rows() >0){
-	// 			return $query->result();
-	// 		}
-	// 		else{
-	// 			return false;
-	// 		}
-	// }
 
 	function get_votes_coach(){
  
@@ -89,6 +82,14 @@ class Election_Model extends CI_Model
 		$this->db->set('votes', 'votes+1', FALSE);
 		$this->db->update('mfp_candidate'); 
    	}		 
+
+   	function is_voted($voted_id)
+   	{
+   		$this->db->from('user'); //tabel woi
+    	$this->db->where('id',$voted_id);
+		$this->db->set('is_voted', 'is_voted+1', FALSE);
+		$this->db->update('user'); 
+   	}
 }
 	
 ?>

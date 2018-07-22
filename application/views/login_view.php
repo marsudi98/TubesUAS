@@ -32,7 +32,7 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
-      <a href="<?php echo base_url() ?>index.php/login/register" class="btn btn-sm btn-link">You want to register? sign up here.</a>
+   <!--    <a href="<?php echo base_url() ?>index.php/login/register" class="btn btn-sm btn-link">You want to register? sign up here.</a> -->
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
     </form>
   </body>

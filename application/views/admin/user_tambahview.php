@@ -17,15 +17,15 @@
                         <?php echo validation_errors(); ?>
                         <div class="form-group">
                             <label for=""><b>Name</b></label>
-                            <input type="text" class="form-control" name="name" placeholder="Input field">
+                            <input type="text" class="form-control" name="name" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label for=""><b>Username</b></label>
-                            <input type="text" class="form-control" name="username" placeholder="Input field">
+                            <input type="text" class="form-control" name="username" placeholder="Username">
                         </div>
                         <div class="form-group">
                             <label for=""><b>Password</b></label>
-                            <input type="password" class="form-control" name="password" placeholder="Input field">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
                         <div class="form-group">
                           <label for=""><b>Level</b></label>

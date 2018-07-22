@@ -1,6 +1,21 @@
 <?php 
-  $this->load->view('header');
+	$this->load->view('header');
+
+	foreach ($data_session as $key){
+		$sessionVoted = $key->is_voted;
+	}
+
+  	// if($this->session->userdata('logged_in')['is_voted'] == 2 ){
+	// 	echo '<script>alert("Sorry, you have voted!")</script>';
+	// 	redirect('voting','refresh');
+	// }
+
+	if($sessionVoted == 1){
+		echo '<script>alert("Sorry, you have voted!")</script>';
+		redirect('voting','refresh');
+	}
 ?>
+
 	<!-- ondragstart="return false" oncontextmenu="return false" onselectstart="return false" -->
 	<body>
 		<br>
@@ -10,7 +25,8 @@
 				<h2 class="text-center">Most Valuable Player World Cup 2018</h2>
 				<img src="<?php echo base_url();?>assets/img/diligent_owl.png" id="vote_logo">
 			</div> -->
-		<form method="post" role="form" action="<?php echo site_url('election_controller/cast_vote')?>">
+		<form method="post" role="form" action="<?php echo site_url('voting/cast_vote')?>">
+			<input type="hidden" name="voted" class="form-control" value="<?php echo $this->session->userdata('logged_in')['id'] ?>">
 			<div  id="ballot_form" class="row col-md-12">
 				<table class="table table-bordered">
 					<thead>
@@ -100,4 +116,5 @@
 		</form>
 	</div>
 	</div>
+	<br>
 </body

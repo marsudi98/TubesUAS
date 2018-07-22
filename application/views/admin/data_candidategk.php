@@ -12,7 +12,7 @@
             <!-- /.row -->
             <div class="row">
               <div class="col-lg-12">
-                  <a href="<?php echo base_url('index.php/gk/create') ?>" class="btn btn-primary my-3 float-righz"><b>Tambah</b></a>
+                  <a href="<?php echo base_url('index.php/gk/create') ?>" class="btn btn-primary my-3 float-righz"><b>Add Data</b></a>
                 <table class="table table-striped">
                   <thead>
                     <th>Fullname</th>
